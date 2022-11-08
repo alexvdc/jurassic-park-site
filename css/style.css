@@ -1,0 +1,431 @@
+@import url(//db.onlinewebfonts.com/c/b606e3d06a5760c59e8aa559d50f54ae?family=Jurassic);
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'IM Fell DW Pica', serif;
+    color: whitesmoke;
+    overflow-x: hidden;
+}
+
+/* *** HIDE SCROLLBAR *** */
+html {
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    width: none;
+}
+
+.filter {
+    position: absolute;
+    background-color: #252525;
+    opacity: 0.6;
+    width: 100%;
+    min-height: 500vh;
+    top: 0;
+    z-index: 5;
+    animation: opacity 0.3s linear;
+    display: none;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+
+header {
+    position: relative;
+}
+
+.logo {
+    width: 80px;
+    position: absolute;
+    left: 2.5rem;
+    top: 4px;
+}
+.logo:hover {
+    text-decoration: none;
+    font-weight: normal;
+    top: -30px;
+}
+
+.quiz-jp {
+    position: absolute;
+    right: 2.5rem;
+    color: #EE81B3;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: all 0.3s;
+    text-shadow: 3px 1px 5px #810955;
+}
+.quiz-jp:hover {
+    letter-spacing: 5px;
+    filter: brightness(120%);
+}
+
+.nav-bar {
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.nav-bar li {
+    margin: 0 1.5rem;
+    list-style: none;
+    width: 120px;
+}
+.nav-bar a:not(.quiz-jp) {
+    text-decoration: none;
+    color:#FFFFE0;
+    font-weight: 700;
+}
+.nav-bar a:hover:not(.quiz-jp) {
+    filter: brightness(150%);
+    color: #810955 ;
+    transition: color 0.3s ease;
+}
+
+.nav-bar ul {
+    background-color: #101010;
+    padding: 1.5rem;
+    box-shadow:  0px 0px 3px 0px black;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-deroulant-mobile {
+    display: none;
+}
+
+.quiz-mobile {
+    display: none;
+}
+
+/* *** NAV SIDE BAR *** */
+.nav-side-bar  {
+    position: absolute;
+    top:68px;
+    left: 0;
+    max-height: 100%;
+    background-color: red;
+}
+
+.nav-side-bar ul {
+    /* height: 100%; */
+    width: 150px;
+}
+
+.nav-side-bar li {
+    text-decoration: none;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.nav-side-bar a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    padding: 1rem;
+}
+
+
+/* container general */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size:cover;
+    background-position: center;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+/* 1er container */
+
+.accueil {
+    background-image: url("../images/main-bg.jpg");
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.accueil article {
+    width: 80%;
+    line-height: 1.5;
+    padding-bottom: 5rem;
+    font-size: clamp(1.2rem, 1.5rem, 3.5vw);
+    backdrop-filter: blur(3px);
+}
+
+.jp1 {
+    background-image: url("../images/bg/funny-jp1-bg.jpg");
+}
+
+.jp2 {
+    background-image: url("../images/bg/jp2-bg.jpg");
+}
+.jp3 {
+    background-image: url("../images/bg/jp3-2-bg.jpg");
+}
+
+
+
+.jp-article {
+    width: 100%;
+    position: relative;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.jp1 .synopsis,
+.jp3 .synopsis {
+    position: relative;
+    margin-left: auto;
+    top: 30px;
+    max-width: 90%;
+    width: 800px;
+    line-height: 1.5;
+    padding: 0 2rem;
+    font-size: clamp(1rem, 1.5rem, 2.5vw);
+    /* pour deplacer le bouton */
+    display: flex;
+    flex-direction: column;
+}
+
+.jp2 .synopsis {
+    position: relative;
+    top: 60px;
+    max-width: 90%;
+    width: 800px;
+    line-height: 1.5;
+    padding: 0 2rem;
+    margin-right: auto;
+    font-size: clamp(1rem, 1.5rem, 2.5vw);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.button-link {
+    margin: 2rem 1rem 0 auto;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem 0;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+}
+.button-link:hover {
+    letter-spacing: 2px;
+}
+
+.button-link::before{
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s;
+    opacity: 0.8;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    right: 0;
+}
+.button-link::after{
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.button-link:hover::before,
+.button-link:hover::after {
+    width: 100%;
+}
+
+.jp2 .button-link {
+    margin: 2rem auto 0 0rem;
+}
+
+.button-link a {
+    color: #b22222;
+    filter: brightness(150%);
+    text-decoration: none;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.video {
+    position: relative;
+    max-width: 100%;
+    width: 600px;
+    border: 5px solid;
+    border-radius: 0.25rem;
+    bottom: 0px;
+}
+
+.ytb-right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.ytb-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.footer {
+    background-color: #252525;
+    /* height: 20vh; */
+}
+.footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 50px;
+}
+.footer a {
+    text-decoration: none;
+    color: #FFFFE0;
+}
+
+.footer a:hover {
+    filter: brightness(150%);
+    color: #810955 ;
+    transition: color 0.3s ease;
+}
+
+
+
+
+@media screen and (max-width: 910px) {
+    .video {
+        display: none;
+    }
+    .jp-article {
+        padding: 0 1rem;
+    }
+
+    .jp1 .synopsis,
+    .jp2 .synopsis,
+    .jp3 .synopsis {
+        position: relative;
+        top: 0px;
+        max-width: 100%;
+        text-align: justify;
+        padding: 0 2rem;
+        font-size: clamp(1.3rem, 1.5rem, 3.5vw);
+    }
+
+    .button-link,
+    .jp2 .button-link {
+        margin: 2rem auto;
+    }
+}
+
+
+
+
+
+
+
+/* --- RESPONSIVE 768px --- */
+@media screen and (max-width: 768px) {
+    .menu-deroulant-mobile {
+        display: block;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 99;
+        position: fixed;
+        width: 30px;
+    }
+
+    .nav-bar {
+        transition: all 0.3s linear;
+        margin-left: -120%;
+        width: 80%;
+    }
+    .nav-bar ul {
+        background-color: transparent;
+        min-height: 100vh;
+        flex-direction: column;
+        font-size: 2rem;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-bar li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-bar a {
+        font-weight: 700;
+    }
+    .nav-bar a:hover:not(.quiz-jp) {
+        filter: brightness(150%);
+        text-decoration:none;
+        color: #810955;
+        transition: all 0.3s ease;
+    }
+
+    .logo {
+        display: none;
+    }
+    .quiz-jp {
+        display: none;
+    }
+
+
+    .mobile-menu {
+        margin-left: 0%;
+        background-color: #252525;
+    }
+
+
+    footer ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer li {
+        margin: 3rem 0;
+    }
+}
+
+
+

@@ -1,0 +1,399 @@
+@import url(//db.onlinewebfonts.com/c/b606e3d06a5760c59e8aa559d50f54ae?family=Jurassic);
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* *** HIDE SCROLLBAR *** */
+html {
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    width: none;
+}
+
+
+
+/* ??? Autre idée pour les cartes niveau responsive ??? */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0c0f0f;
+    font-family: 'IM Fell DW Pica', serif;
+}
+
+main {
+    width: 80%;
+    font-size: 1.3rem;
+    background-color: #1A1C20;
+    background-color: #1f2937;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+header {
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+}
+
+header h1 {
+    color: #f2f2f2;
+    font-size: clamp(2.3rem, 8rem, 7vw) ;
+    font-family: "Jurassic", serif;
+    text-align: center;
+    text-shadow:   red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.figure-jp1 {
+    background-image: url(../images/bg/header-jurassic-park-1v2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    height: 100vh;
+}
+
+.figure-jp2 {
+    background-image: url(../images/bg/JURASSICPARK2v2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    height: 100vh;
+}
+
+.figure-jp3 {
+    background-image: url(../images/bg/jurassic-park-3v2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    height: 100vh;
+}
+
+
+/* *** barre de navigation *** */
+
+.logo {
+    width: 80px;
+    position: absolute;
+    left: 2.5rem;
+    top: 4px;
+}
+.logo:hover {
+    text-decoration: none;
+    font-weight: normal;
+    top: -30px;
+}
+
+.quiz-jp {
+    position: absolute;
+    right: 2.5rem;
+    color: #EE81B3;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: all 0.3s;
+    text-shadow: 3px 1px 5px #810955;
+}
+.quiz-jp:hover {
+    letter-spacing: 5px;
+    filter: brightness(120%);
+}
+
+.nav-bar {
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.nav-bar li {
+    margin: 0 1.5rem;
+    list-style: none;
+    width: 120px;
+}
+.nav-bar a:not(.quiz-jp) {
+    text-decoration: none;
+    font-weight: 700;
+    color:#FFFFE0;
+}
+.nav-bar a:hover:not(.quiz-jp) {
+    filter: brightness(150%);
+    color: #810955 ;
+    transition: color 0.3s ease;
+}
+
+.nav-bar ul {
+    background-color: #101010;
+    padding: 1.5rem;
+    box-shadow:  0px 0px 5px 0px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-deroulant-mobile {
+    display: none;
+}
+.home {
+    display: none;
+}
+.quiz-mobile {
+    display: none;
+}
+
+/* *** NAV SIDE BAR *** */
+.nav-side-bar  {
+    position: absolute;
+    top:68px;
+    left: 0;
+    max-height: 100%;
+    background-color: red;
+}
+
+.nav-side-bar ul {
+    /* height: 100%; */
+    width: 150px;
+}
+
+.nav-side-bar li {
+    text-decoration: none;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.nav-side-bar a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    padding: 1rem;
+}
+
+/* --- RESUME STORY --- */
+    .resume-story {
+        color: #FFFFE0;
+    }
+    .resume-story p {
+        padding-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+/* --- CARD CONTAINER --- */
+
+.section-title {
+    padding: 3rem 0;
+    color: #FFFFE0;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 5px;
+    background-color: yellow;
+}
+
+.card-character {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.card-dino {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap:wrap;
+    gap: 24px;
+}
+.card11 img[alt="Compsognathus"] {
+    filter: brightness(170%);
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 2px 15px 0px #020d20 ;
+}
+
+
+.profil-character {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+}
+
+
+.card:hover .profil-character {
+    filter: grayscale(1);
+}
+
+
+.text-character {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    height: 25px;
+    bottom: 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: default;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 0 1rem 1rem 1rem;
+    font-size: 1.1rem;
+}
+
+.text-character p {
+    padding: 0.2rem;
+}
+
+.card:hover {
+    transition: all 0.5s;
+}
+
+.card:hover .text-character {
+    transition: all 0.3s;
+    height: 100%;
+    align-items: center;
+    padding-top: 1rem;
+    color: yellow;
+    justify-content: space-between;
+    backdrop-filter: blur(3px);
+}
+
+
+
+
+footer {
+    background-color: #101010;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: clamp(2rem, 4rem, 5vw);
+}
+footer a {
+    text-decoration: none;
+    color: #FFFFE0;
+}
+
+footer a:hover {
+    filter: brightness(150%);
+    color: #810955 ;
+    transition: color 0.3s ease;
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (max-width: 980px) {
+    .card {
+        width: 250px;
+        height: 333.34px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu-deroulant-mobile {
+        display: block;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 99;
+        position: fixed;
+        width: 30px;
+    }
+
+    .nav-bar {
+        backdrop-filter: blur(20px);
+        transition: all 0.3s linear;
+        margin-left: -120%;
+        width: 100%;
+    }
+    .nav-bar ul {
+        background-color: transparent;
+        min-height: 100vh;
+        flex-direction: column;
+        font-size: 2rem;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-bar li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-bar a:not(.quiz-jp) {
+        font-weight: 700;
+    }
+    .nav-bar a:hover:not(.quiz-jp) {
+        text-decoration:none;
+        color: #810955;
+        transition: all 0.3s ease;
+    }
+
+    .logo {
+        display: none;
+    }
+    .quiz-jp {
+        display: none;
+    }
+
+    .home {
+        display: block;
+    }
+    .mobile-menu {
+        margin-left: 0%;
+    }
+
+    .text-character {
+        font-size: 0.9rem;
+    }
+    .resume-story p {
+        font-size: 1.2rem;
+    }
+
+
+    footer ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer li {
+        margin: 2rem 0;
+    }
+}
